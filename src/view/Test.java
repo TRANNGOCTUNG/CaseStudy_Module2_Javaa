@@ -1,8 +1,8 @@
 package view;
 
-import controller.ManagerPerson;
+import controller.CustomerManager;
 import modal.person.Person;
-import modal.person.PersonManager;
+import modal.person.Customer;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Test {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        ManagerPerson userBook = new ManagerPerson();
+        CustomerManager userBook = new CustomerManager();
         List<Person> people =userBook.getListPerson();
         add(people);
         userBook.display();
@@ -24,7 +24,7 @@ public class Test {
         String address = scanner.next();
         System.out.println("Add position personManager: ");
         String position = scanner.next();
-        PersonManager personManager = new PersonManager(name, age, address, position);
+        Customer personManager = new Customer(name, age, address, position);
         list.add(personManager);
         return list;
     }

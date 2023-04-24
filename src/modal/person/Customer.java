@@ -8,7 +8,7 @@ public class Customer extends Person implements Serializable {
     public Customer() {
     }
 
-    public Customer(String name, int age, String address, String phone) {
+    public Customer(String name, int age, String address,String phone) {
         super(name, age, address);
         this.phone = phone;
     }
@@ -23,9 +23,9 @@ public class Customer extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() +
-                "Customer{"+
-                "phone='" + phone + '\'' +
+        return  super.toString()+
+                "PersonManager{" +
+                "position='" + phone + '\'' +
                 '}';
     }
 }

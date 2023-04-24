@@ -2,7 +2,7 @@ package modal.book;
 
 import java.io.Serializable;
 
-public class FictionBook extends Book implements Serializable,Comparable<FictionBook> {
+public class FictionBook extends Book implements Serializable{
     private String category;
 
     public FictionBook() {
@@ -27,10 +27,5 @@ public class FictionBook extends Book implements Serializable,Comparable<Fiction
                 "FictionBook{" +
                 "category='" + category + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(FictionBook o) {
-        return this.getAuthor().compareTo(o.getAuthor());
     }
 }

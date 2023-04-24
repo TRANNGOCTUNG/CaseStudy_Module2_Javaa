@@ -2,11 +2,10 @@ package modal.book;
 
 import java.io.Serializable;
 
-public class ProgramingBook extends Book implements Serializable,Comparable<ProgramingBook> {
+public class ProgramingBook extends Book implements Serializable{
     private String Language;
 
     public ProgramingBook() {
-
     }
 
     public ProgramingBook(int id,String title, String author, int quantity, double price, String language) {
@@ -28,10 +27,5 @@ public class ProgramingBook extends Book implements Serializable,Comparable<Prog
                 "ProgramingBook{" +
                 "Language='" + Language + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(ProgramingBook o) {
-        return this.getQuantity() - o.getQuantity();
     }
 }

@@ -2,7 +2,7 @@ package modal.book;
 
 import java.io.Serializable;
 
-public class BusinessBook extends Book implements Serializable,Comparable<BusinessBook>{
+public class BusinessBook extends Book implements Serializable{
     private String origin;
 
     public BusinessBook() {
@@ -27,10 +27,5 @@ public class BusinessBook extends Book implements Serializable,Comparable<Busine
                 "BusinessBook{" +
                 "origin='" + origin + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(BusinessBook o) {
-        return (int)(this.getPrice() - o.getPrice());
     }
 }
