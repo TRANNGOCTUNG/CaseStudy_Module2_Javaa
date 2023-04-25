@@ -208,7 +208,9 @@ public class ShowManager {
 
     public void totalLanguagesBook() {
         int choice;
+        boolean check;
         do {
+            check = true;
             System.out.println("""
                     Menu.
                     1.Total category fictionBook.
@@ -247,14 +249,18 @@ public class ShowManager {
                         e.printStackTrace();
                     }
                 }
-                case 0 -> System.exit(0);
+                case 0 -> {
+                    check = false;
+                }
             }
         } while (choice != 0);
     }
 
     public void displayCustomer() {
         int choice;
+        boolean check;
         do {
+            check = true;
             System.out.println("""
                     Menu.
                     1.Display Customer.
@@ -274,7 +280,9 @@ public class ShowManager {
                 case 3 -> {
                     customerManager.readData("src/file/customer.dat");
                 }
-                case 0 -> System.exit(0);
+                case 0 ->{
+                    check = false;
+                }
             }
 
 
@@ -284,7 +292,9 @@ public class ShowManager {
     public void managerBook() {
         ShowManager showManager = new ShowManager();
         int choice;
+        boolean check ;
         do {
+            check = true;
             System.out.println("""
                     Menu
                     1.Add Book.
@@ -338,7 +348,9 @@ public class ShowManager {
                 case 11 -> {
                     bookManager.readData("src/file/book.dat");
                 }
-                case 0 -> System.exit(0);
+                case 0 -> {
+                    check = false;
+                }
 
             }
 
@@ -348,7 +360,9 @@ public class ShowManager {
 
     public void manageCustomer() {
         int choice;
+        boolean check ;
         do {
+           check = true;
             System.out.println("""
                     Menu.
                     1.Add Customer
@@ -390,13 +404,16 @@ public class ShowManager {
                 case 8 -> {
                     customerManager.readData("src/file/customer.dat");
                 }
-                case 0 -> System.exit(0);
+                case 0 -> {
+                    check = false;
+                }
             }
         } while (choice != 0);
     }
 
     public void showManagement() {
         int choice;
+        int choice1;
         ShowManager showManager = new ShowManager();
         boolean check;
             do {
@@ -419,7 +436,7 @@ public class ShowManager {
                                     0.Exit
                                     """);
                             System.out.println("Enter choice: ");
-                            int choice1 = Integer.parseInt(scanner.nextLine());
+                            choice1 = Integer.parseInt(scanner.nextLine());
                             switch (choice1) {
                                 case 1 -> {
                                     showManager.managerBook();
@@ -431,16 +448,15 @@ public class ShowManager {
                                     check = false;
                                 }
                             }
-                        } while (choice != 0);
+                        } while (choice1 != 0);
                     }
                     case 2 -> {
                         showManager.displayCustomer();
-
                     }
                     case 0 -> {
                         check = false;
                     }
                 }
-            } while (check);
+            } while (choice != 0);
     }
 }
