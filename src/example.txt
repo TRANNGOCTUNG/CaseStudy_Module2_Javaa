@@ -1,5 +1,8 @@
 total category FictionBook : Viễn tưởng 1
 total language progaramingBook : Java
 total original BusinessBook: Việt Nam
-tìm kiếm book
+tìm kiếm book title: FictionBook: Đỏ trỗi dậy , ProgaramingBook: Java căn bản, BusinessBook: Nghĩ giàu và làm giàu
 tìm kiếm name customer Trần Xuân Mạnh
+FictionBook: Hành Trình Vào Tâm Trái Đất , Jules Verne , 78.300, Viễn Tưởng 1.
+ProgramingBook: Java căn bản , Nguyễn Văn Khoa , 70.000 , Java
+BusinessBook: Dạy con làm giàu , Robert T. Kiyosaki , 110.000 , USA.

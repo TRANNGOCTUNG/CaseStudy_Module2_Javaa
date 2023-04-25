@@ -23,9 +23,6 @@ public class Customer extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "PersonManager{" +
-                "position='" + phone + '\'' +
-                '}';
+        return  super.toString()+ "PersonManager{" + "position='" + phone + '\'' + '}';
     }
 }

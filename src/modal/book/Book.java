@@ -63,12 +63,6 @@ public abstract class Book implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                '}';
+        return "Book{" + ", id=" + id + ", title='" + title + '\'' + ", author='" + author + '\'' + ", quantity=" + quantity + ", price=" + price + '}';
     }
 }

@@ -40,10 +40,6 @@ public abstract class Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", address='" + address + '\'' +
-                '}';
+        return "Person{" + "name='" + name + '\'' + ", age=" + age + ", address='" + address + '\'' + '}';
     }
 }

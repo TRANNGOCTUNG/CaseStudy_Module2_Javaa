@@ -81,7 +81,6 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
                 return o1.getAuthor().compareTo(o2.getAuthor());
             }
         });
-
     }
     public void sortTitle() {
         Collections.sort(books, new Comparator<Book>(){

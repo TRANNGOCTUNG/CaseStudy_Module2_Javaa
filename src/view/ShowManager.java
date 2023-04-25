@@ -2,6 +2,7 @@ package view;
 
 import controller.BookManager;
 import controller.CustomerManager;
+import login.RegexUser;
 import modal.book.Book;
 import modal.book.BusinessBook;
 import modal.book.FictionBook;
@@ -18,7 +19,7 @@ public class ShowManager {
     public BookManager bookManager = new BookManager();
     public List<Book> books = bookManager.getListBook();
     public Scanner scanner = new Scanner(System.in);
-
+    public RegexUser userName = new RegexUser();
     public Person addCustomer() {
         try {
             System.out.println("Enter name customer: ");
@@ -77,6 +78,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter price fictionBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Enter category fictionBook: ");
                     String category = scanner.nextLine();
                     FictionBook fictionBook = new FictionBook(id, title, author, quantity, price, category);
@@ -97,6 +99,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter price programingBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Enter language programingBook: ");
                     String language = scanner.nextLine();
                     ProgramingBook programingBook = new ProgramingBook(id, title, author, quantity, price, language);
@@ -117,6 +120,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter price businessBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Enter origin businessBook: ");
                     String origin = scanner.nextLine();
                     BusinessBook businessBook = new BusinessBook(id, title, author, quantity, price, origin);
@@ -153,6 +157,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Edit price fictionBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Edit category fictionBook: ");
                     String category = scanner.nextLine();
                     FictionBook fictionBook = new FictionBook(id, title, author, quantity, price, category);
@@ -173,6 +178,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Edit price programingBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Edit language programingBook: ");
                     String language = scanner.nextLine();
                     ProgramingBook programingBook = new ProgramingBook(id, title, author, quantity, price, language);
@@ -193,6 +199,7 @@ public class ShowManager {
                     int quantity = Integer.parseInt(scanner.nextLine());
                     System.out.println("Edit price businessBook: ");
                     double price = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Edit origin businessBook: ");
                     String origin = scanner.nextLine();
                     BusinessBook businessBook = new BusinessBook(id, title, author, quantity, price, origin);
@@ -208,9 +215,7 @@ public class ShowManager {
 
     public void totalLanguagesBook() {
         int choice;
-        boolean check;
         do {
-            check = true;
             System.out.println("""
                     Menu.
                     1.Total category fictionBook.
@@ -250,7 +255,6 @@ public class ShowManager {
                     }
                 }
                 case 0 -> {
-                    check = false;
                 }
             }
         } while (choice != 0);
@@ -258,9 +262,7 @@ public class ShowManager {
 
     public void displayCustomer() {
         int choice;
-        boolean check;
         do {
-            check = true;
             System.out.println("""
                     Menu.
                     1.Display Customer.
@@ -281,20 +283,15 @@ public class ShowManager {
                     customerManager.readData("src/file/customer.dat");
                 }
                 case 0 ->{
-                    check = false;
                 }
             }
-
-
         } while (choice != 0);
     }
 
     public void managerBook() {
         ShowManager showManager = new ShowManager();
         int choice;
-        boolean check ;
         do {
-            check = true;
             System.out.println("""
                     Menu
                     1.Add Book.
@@ -349,7 +346,6 @@ public class ShowManager {
                     bookManager.readData("src/file/book.dat");
                 }
                 case 0 -> {
-                    check = false;
                 }
 
             }
@@ -360,9 +356,7 @@ public class ShowManager {
 
     public void manageCustomer() {
         int choice;
-        boolean check ;
         do {
-           check = true;
             System.out.println("""
                     Menu.
                     1.Add Customer
@@ -405,17 +399,15 @@ public class ShowManager {
                     customerManager.readData("src/file/customer.dat");
                 }
                 case 0 -> {
-                    check = false;
                 }
             }
         } while (choice != 0);
     }
 
     public void showManagement() {
+        ShowManager showManager = new ShowManager();
         int choice;
         int choice1;
-        ShowManager showManager = new ShowManager();
-        boolean check;
             do {
                 System.out.println("""
                     Menu.
@@ -425,7 +417,6 @@ public class ShowManager {
                     """);
                 System.out.println("Enter choice: ");
                 choice = Integer.parseInt(scanner.nextLine());
-                check = true;
                 switch (choice) {
                     case 1 -> {
                         do {
@@ -445,7 +436,6 @@ public class ShowManager {
                                     showManager.manageCustomer();
                                 }
                                 case 0 -> {
-                                    check = false;
                                 }
                             }
                         } while (choice1 != 0);
@@ -454,7 +444,6 @@ public class ShowManager {
                         showManager.displayCustomer();
                     }
                     case 0 -> {
-                        check = false;
                     }
                 }
             } while (choice != 0);

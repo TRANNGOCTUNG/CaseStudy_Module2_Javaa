@@ -23,9 +23,6 @@ public class ProgramingBook extends Book implements Serializable{
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "ProgramingBook{" +
-                "Language='" + Language + '\'' +
-                '}';
+        return super.toString()+ "ProgramingBook{" + "Language='" + Language + '\'' + '}';
     }
 }
