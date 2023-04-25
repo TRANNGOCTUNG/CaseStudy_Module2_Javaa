@@ -18,7 +18,8 @@ public class ShowManager {
     public BookManager bookManager = new BookManager();
     public List<Book> books = bookManager.getListBook();
     public Scanner scanner = new Scanner(System.in);
-    public Person addCustomer(){
+
+    public Person addCustomer() {
         try {
             System.out.println("Enter name customer: ");
             String name = scanner.nextLine();
@@ -28,14 +29,15 @@ public class ShowManager {
             String address = scanner.nextLine();
             System.out.println("Enter phone customer: ");
             String phone = scanner.nextLine();
-            Customer customer = new Customer(name, age,address, phone);
+            Customer customer = new Customer(name, age, address, phone);
             return customer;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-    public Person editCustomer(){
+
+    public Person editCustomer() {
         try {
             System.out.println("Edit name customer: ");
             String name = scanner.nextLine();
@@ -52,7 +54,8 @@ public class ShowManager {
         }
         return null;
     }
-    public Book addBook(){
+
+    public Book addBook() {
         System.out.println("""
                 Menu.
                 1.Add FictionBook
@@ -60,73 +63,74 @@ public class ShowManager {
                 3.Add BusinessBook
                 """);
         System.out.println("Enter choice: ");
-        int choice =Integer.parseInt(scanner.nextLine());
+        int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
-                case 1 -> {
-                    try {
-                        System.out.println("Enter id fictionBook: ");
-                        int id = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter title fictionBook: ");
-                        String title = scanner.nextLine();
-                        System.out.println("Enter author fictionBook: ");
-                        String author = scanner.nextLine();
-                        System.out.println("Enter quantity fictionBook: ");
-                        int quantity = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter price fictionBook: ");
-                        double price = scanner.nextDouble();
-                        System.out.println("Enter category fictionBook: ");
-                        String category = scanner.nextLine();
-                        FictionBook fictionBook = new FictionBook(id, title, author, quantity, price, category);
-                        return fictionBook;
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
+            case 1 -> {
+                try {
+                    System.out.println("Enter id fictionBook: ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter title fictionBook: ");
+                    String title = scanner.nextLine();
+                    System.out.println("Enter author fictionBook: ");
+                    String author = scanner.nextLine();
+                    System.out.println("Enter quantity fictionBook: ");
+                    int quantity = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter price fictionBook: ");
+                    double price = scanner.nextDouble();
+                    System.out.println("Enter category fictionBook: ");
+                    String category = scanner.nextLine();
+                    FictionBook fictionBook = new FictionBook(id, title, author, quantity, price, category);
+                    return fictionBook;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                case 2 -> {
-                    try {
-                        System.out.println("Enter id programingBook : ");
-                        int id = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter title programingBook: ");
-                        String title = scanner.nextLine();
-                        System.out.println("Enter author programingBook: ");
-                        String author = scanner.nextLine();
-                        System.out.println("Enter quantity programingBook: ");
-                        int quantity = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter price programingBook: ");
-                        double price = scanner.nextDouble();
-                        System.out.println("Enter language programingBook: ");
-                        String language = scanner.nextLine();
-                        ProgramingBook programingBook = new ProgramingBook(id, title, author, quantity, price, language);
-                        return programingBook;
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                case 3 -> {
-                    try {
-                        System.out.println("Enter id businessBook : ");
-                        int id = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter title businessBook: ");
-                        String title = scanner.nextLine();
-                        System.out.println("Enter author businessBook: ");
-                        String author = scanner.nextLine();
-                        System.out.println("Enter quantity businessBook: ");
-                        int quantity = Integer.parseInt(scanner.nextLine());
-                        System.out.println("Enter price businessBook: ");
-                        double price = scanner.nextDouble();
-                        System.out.println("Enter origin businessBook: ");
-                        String origin = scanner.nextLine();
-                        BusinessBook businessBook = new BusinessBook(id, title, author, quantity, price, origin);
-                        return businessBook;
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                default -> System.out.println("Can not find book: ");
             }
+            case 2 -> {
+                try {
+                    System.out.println("Enter id programingBook : ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter title programingBook: ");
+                    String title = scanner.nextLine();
+                    System.out.println("Enter author programingBook: ");
+                    String author = scanner.nextLine();
+                    System.out.println("Enter quantity programingBook: ");
+                    int quantity = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter price programingBook: ");
+                    double price = scanner.nextDouble();
+                    System.out.println("Enter language programingBook: ");
+                    String language = scanner.nextLine();
+                    ProgramingBook programingBook = new ProgramingBook(id, title, author, quantity, price, language);
+                    return programingBook;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            case 3 -> {
+                try {
+                    System.out.println("Enter id businessBook : ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter title businessBook: ");
+                    String title = scanner.nextLine();
+                    System.out.println("Enter author businessBook: ");
+                    String author = scanner.nextLine();
+                    System.out.println("Enter quantity businessBook: ");
+                    int quantity = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Enter price businessBook: ");
+                    double price = scanner.nextDouble();
+                    System.out.println("Enter origin businessBook: ");
+                    String origin = scanner.nextLine();
+                    BusinessBook businessBook = new BusinessBook(id, title, author, quantity, price, origin);
+                    return businessBook;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            default -> System.out.println("Can not find book: ");
+        }
         return null;
     }
-    public Book editBook(){
+
+    public Book editBook() {
         System.out.println("""
                 Menu.
                 1.Edit FictionBook
@@ -135,9 +139,9 @@ public class ShowManager {
                 """);
 
         System.out.println("Enter choice: ");
-         int choice =Integer.parseInt(scanner.nextLine());
+        int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
-            case 1 ->{
+            case 1 -> {
                 try {
                     System.out.println("Edit id fictionBook: ");
                     int id = Integer.parseInt(scanner.nextLine());
@@ -173,11 +177,11 @@ public class ShowManager {
                     String language = scanner.nextLine();
                     ProgramingBook programingBook = new ProgramingBook(id, title, author, quantity, price, language);
                     return programingBook;
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            case 3->{
+            case 3 -> {
                 try {
                     System.out.println("Edit id businessBook : ");
                     int id = Integer.parseInt(scanner.nextLine());
@@ -193,7 +197,7 @@ public class ShowManager {
                     String origin = scanner.nextLine();
                     BusinessBook businessBook = new BusinessBook(id, title, author, quantity, price, origin);
                     return businessBook;
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -201,59 +205,61 @@ public class ShowManager {
         }
         return null;
     }
-    public void totalLanguagesBook(){
-       int choice;
-       do{
-           System.out.println("""
-                   Menu.
-                   1.Total category fictionBook.
-                   2.Total language programingBook
-                   3.Total origin businessBook.
-                   0.Exit.
-                   """);
-           System.out.println("Enter choice: ");
-           choice = Integer.parseInt(scanner.nextLine());
-           switch (choice) {
-               case 1 ->{
-                   try {
-                       System.out.println("Enter language: ");
-                       String language = scanner.nextLine();
-                       System.out.println("Total book language Viễn Tưởng 1  FictionBook is: " + bookManager.totalCategory(books, language));
-                   }catch (Exception e){
-                       e.printStackTrace();
-                   }
-               }
-               case 2 ->{
-                   try{
-                       System.out.println("Enter language: ");
-                       String language = scanner.nextLine();
-                       System.out.println("Total book language Java ProgramingBook is: "+ bookManager.totalLanguage(books,language));
-                   } catch (Exception e){
-                       e.printStackTrace();
-                   }
-               }
-               case 3 ->{
-                   try {
-                       System.out.println("Enter language: ");
-                       String language = scanner.nextLine();
-                       System.out.println("Total book language Việt Nam BusinessBook is: "+ bookManager.totalOriginal(books,language));
 
-                   } catch (Exception e){
-                       e.printStackTrace();
-                   }
-               }
-               case 0 -> System.exit(0);
-           }
-       } while (choice != 0);
+    public void totalLanguagesBook() {
+        int choice;
+        do {
+            System.out.println("""
+                    Menu.
+                    1.Total category fictionBook.
+                    2.Total language programingBook
+                    3.Total origin businessBook.
+                    0.Exit.
+                    """);
+            System.out.println("Enter choice: ");
+            choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1 -> {
+                    try {
+                        System.out.println("Enter language: ");
+                        String language = scanner.nextLine();
+                        System.out.println("Total book language Viễn Tưởng 1  FictionBook is: " + bookManager.totalCategory(books, language));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                case 2 -> {
+                    try {
+                        System.out.println("Enter language: ");
+                        String language = scanner.nextLine();
+                        System.out.println("Total book language Java ProgramingBook is: " + bookManager.totalLanguage(books, language));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                case 3 -> {
+                    try {
+                        System.out.println("Enter language: ");
+                        String language = scanner.nextLine();
+                        System.out.println("Total book language Việt Nam BusinessBook is: " + bookManager.totalOriginal(books, language));
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                case 0 -> System.exit(0);
+            }
+        } while (choice != 0);
     }
 
-    public void displayCustomer(){
+    public void displayCustomer() {
         int choice;
-        do{
+        do {
             System.out.println("""
                     Menu.
                     1.Display Customer.
                     2.Display Book.
+                    3.Read name customer files.
                     0.Exit.
                     """);
             System.out.println("Enter choice: ");
@@ -265,16 +271,20 @@ public class ShowManager {
                 case 2 -> {
                     bookManager.display();
                 }
+                case 3 -> {
+                    customerManager.readData("src/file/customer.dat");
+                }
                 case 0 -> System.exit(0);
             }
 
 
-        } while (choice !=0);
+        } while (choice != 0);
     }
-    public void managerBook(){
+
+    public void managerBook() {
         ShowManager showManager = new ShowManager();
         int choice;
-        do{
+        do {
             System.out.println("""
                     Menu
                     1.Add Book.
@@ -293,52 +303,52 @@ public class ShowManager {
             System.out.println("Enter choice: ");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
-                case 1 ->{
+                case 1 -> {
                     bookManager.add(addBook());
                 }
-                case 2 ->{
+                case 2 -> {
                     bookManager.display();
                 }
-                case 3 ->{
+                case 3 -> {
                     bookManager.edit(editBook());
                 }
-                case 4 ->{
+                case 4 -> {
                     bookManager.delete();
                 }
-                case 5 ->{
+                case 5 -> {
                     System.out.println("Enter name book: ");
                     String name = scanner.nextLine();
-                    bookManager.search(books,name);
+                    bookManager.search(books, name);
                 }
-                case 6 ->{
+                case 6 -> {
                     bookManager.sort();
                 }
-                case 7 ->{
+                case 7 -> {
                     bookManager.sortTitle();
                 }
-                case 8 ->{
+                case 8 -> {
                     bookManager.getRealMoney();
                 }
-                case 9 ->{
+                case 9 -> {
                     showManager.totalLanguagesBook();
                 }
-                case 10 ->{
-                    bookManager.writeData(books,"src/file/book.dat");
+                case 10 -> {
+                    bookManager.writeData(books, "src/file/book.dat");
                 }
-                case 11 ->{
+                case 11 -> {
                     bookManager.readData("src/file/book.dat");
                 }
                 case 0 -> System.exit(0);
 
             }
 
-        } while (choice !=0);
+        } while (choice != 0);
 
     }
-    public void manageCustomer(){
+
+    public void manageCustomer() {
         int choice;
-        ShowManager showManager = new ShowManager();
-        do{
+        do {
             System.out.println("""
                     Menu.
                     1.Add Customer
@@ -352,7 +362,7 @@ public class ShowManager {
                     0.Exit.
                     """);
             System.out.println("Enter choice: ");
-            choice  = Integer.parseInt(scanner.nextLine());
+            choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1 -> {
                     customerManager.add(addCustomer());
@@ -369,15 +379,15 @@ public class ShowManager {
                 case 5 -> {
                     System.out.println("Enter name customer search:");
                     String name = scanner.nextLine();
-                    customerManager.search(person,name);
+                    customerManager.search(person, name);
                 }
                 case 6 -> {
                     customerManager.sortAge();
                 }
                 case 7 -> {
-                    customerManager.writeData(person,"src/file/customer.dat");
+                    customerManager.writeData(person, "src/file/customer.dat");
                 }
-                case 8 ->{
+                case 8 -> {
                     customerManager.readData("src/file/customer.dat");
                 }
                 case 0 -> System.exit(0);
@@ -385,30 +395,52 @@ public class ShowManager {
         } while (choice != 0);
     }
 
-    public void showManagement(){
+    public void showManagement() {
         int choice;
         ShowManager showManager = new ShowManager();
-        do{
-            System.out.println("""
+        boolean check;
+            do {
+                System.out.println("""
                     Menu.
                     1.Are you the manager
-                    2.You are the customer
-                    3.Read name customer files
+                    2.You are the customer                  
                     0.Exit.
                     """);
-            System.out.println("Enter choice: ");
-            choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1->{
+                System.out.println("Enter choice: ");
+                choice = Integer.parseInt(scanner.nextLine());
+                check = true;
+                switch (choice) {
+                    case 1 -> {
+                        do {
+                            System.out.println("""
+                                    Menu.
+                                    1.managerBook
+                                    2.managerCustomer
+                                    0.Exit
+                                    """);
+                            System.out.println("Enter choice: ");
+                            int choice1 = Integer.parseInt(scanner.nextLine());
+                            switch (choice1) {
+                                case 1 -> {
+                                    showManager.managerBook();
+                                }
+                                case 2 -> {
+                                    showManager.manageCustomer();
+                                }
+                                case 0 -> {
+                                    check = false;
+                                }
+                            }
+                        } while (choice != 0);
+                    }
+                    case 2 -> {
+                        showManager.displayCustomer();
 
+                    }
+                    case 0 -> {
+                        check = false;
+                    }
                 }
-                case 2 -> {
-                    showManager.displayCustomer();
-
-                }
-                case 0 -> System.exit(0);
-            }
-        } while (choice != 0);
+            } while (check);
     }
-
 }
