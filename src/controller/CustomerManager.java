@@ -32,9 +32,7 @@ public class CustomerManager implements CRUD<Person> {
     }
 
     @Override
-    public void edit(Person value) {
-        System.out.println("Enter index edit: ");
-        int index = scanner.nextInt();
+    public void edit(Person value,int index) {
         for (int i = 0; i < persons.size() ; i++) {
             if(i == index) {
                 persons.set(i, value);
@@ -53,9 +51,10 @@ public class CustomerManager implements CRUD<Person> {
     }
 
     public void search(List<Person> list,String name) {
-        for (int i = 0; i < persons.size(); i++) {
-            if(persons.get(i).getName().equals(name)){
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).getName().equals(name)){
                 System.out.println(name + " getName " +  " index : " + i );
+                break;
             } else {
                 System.out.println("Can not found: ");
             }

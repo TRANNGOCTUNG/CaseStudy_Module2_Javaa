@@ -228,7 +228,7 @@ public class ShowManager {
             switch (choice) {
                 case 1 -> {
                     try {
-                        System.out.println("Enter language: ");
+                        System.out.println("Enter category: ");
                         String language = scanner.nextLine();
                         System.out.println("Total book language Viễn Tưởng 1  FictionBook is: " + bookManager.totalCategory(books, language));
                     } catch (Exception e) {
@@ -246,7 +246,7 @@ public class ShowManager {
                 }
                 case 3 -> {
                     try {
-                        System.out.println("Enter language: ");
+                        System.out.println("Enter origin: ");
                         String language = scanner.nextLine();
                         System.out.println("Total book language Việt Nam BusinessBook is: " + bookManager.totalOriginal(books, language));
 
@@ -298,9 +298,9 @@ public class ShowManager {
                     2.Display Book.
                     3.Edit Book.
                     4.Delete Book.
-                    5.Search Book.
-                    6.SortAuthor Book.
-                    7.SortTitle Book.
+                    5.Search Title Book.
+                    6.Sort Author Book.
+                    7.Sort Title Book.
                     8.RealMoney Book.
                     9.Total Language Book.
                     10.Save Book.
@@ -317,7 +317,9 @@ public class ShowManager {
                     bookManager.display();
                 }
                 case 3 -> {
-                    bookManager.edit(editBook());
+                    System.out.println("Enter index edit:");
+                    int index = Integer.parseInt(scanner.nextLine());
+                    bookManager.edit(editBook(),index);
                 }
                 case 4 -> {
                     bookManager.delete();
@@ -364,7 +366,7 @@ public class ShowManager {
                     3.Edit Customer.
                     4.Delete Customer.
                     5.Search Customer.
-                    6.Sort Customer.
+                    6.Sort name Customer .
                     7.Save Files
                     8.Read Files
                     0.Exit.
@@ -379,7 +381,9 @@ public class ShowManager {
                     customerManager.display();
                 }
                 case 3 -> {
-                    customerManager.edit(editCustomer());
+                    System.out.println("Enter index edit:");
+                    int index = Integer.parseInt(scanner.nextLine());
+                    customerManager.edit(editCustomer(),index);
                 }
                 case 4 -> {
                     customerManager.delete();

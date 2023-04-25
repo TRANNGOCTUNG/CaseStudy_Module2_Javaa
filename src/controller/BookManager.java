@@ -32,7 +32,6 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
     @Override
     public void add(Book value) {
         books.add(value);
-
     }
     @Override
     public void display() {
@@ -42,9 +41,7 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
         }
     }
     @Override
-    public void edit(Book value) {
-        System.out.println("Enter index edit:");
-        int index = scanner.nextInt();
+    public void edit(Book value,int index) {
         for (int i = 0; i < books.size(); i++) {
             if(i == index){
                 books.set(i,value);
@@ -65,9 +62,10 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
     }
     @Override
     public void search(List<Book> list,String name) {
-        for (int i = 0; i < books.size(); i++) {
-            if(books.get(i).getTitle().equals(name)){
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).getTitle().equals(name)){
                 System.out.println(name + " getTile " + " index : " + i );
+                break;
             } else {
                 System.out.println("Can not found: ");
             }
