@@ -8,6 +8,8 @@ import modal.book.ProgramingBook;
 import modal.interfaces.CRUD;
 import modal.interfaces.SearchSort;
 import modal.interfaces.RealMoney;
+import modal.person.Person;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
 
@@ -17,9 +19,9 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
     private Scanner scanner = new Scanner(System.in);
     public BookManager() {
         books = new ArrayList<>();
-        books.add(new FictionBook(1,"Đỏ trỗi dậy","Lê Đình Chi",20,102.000,"English"));
-        books.add(new FictionBook(2,"Hai vạn dặm dưới đáy biện","Jules Verne",15,81.600,"Tiếng Việt"));
-        books.add(new FictionBook(3,"Người minh họa","Ray Bradbury",10,100.000,"English"));
+        books.add(new FictionBook(1,"Đỏ trỗi dậy","Lê Đình Chi",20,102.000,"Viễn tưởng 1"));
+        books.add(new FictionBook(2,"Hai vạn dặm dưới đáy biện","Jules Verne",15,81.600,"Viễn tưởng 2"));
+        books.add(new FictionBook(3,"Người minh họa","Ray Bradbury",10,100.000,"Viễn tưởng 1"));
         books.add(new ProgramingBook(4,"Java căn bản","Pham Văn Trung",20,95.000,"Java"));
         books.add(new ProgramingBook(5,"Lập trình Java ","Trần Phú Tài",20,105.000,"Java"));
         books.add(new ProgramingBook(6,"Lập trình Python","Trần Văn Đạt",15,80.000,"Python"));
@@ -62,16 +64,15 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
         }
     }
     @Override
-    public void search(String name) {
+    public void search(List<Book> list,String name) {
         for (int i = 0; i < books.size(); i++) {
-            if(books.get(i).equals(name)){
-                System.out.println(name + " index : " + i );
+            if(books.get(i).getTitle().equals(name)){
+                System.out.println(name + " getTile " + " index : " + i );
             } else {
                 System.out.println("Can not found: ");
             }
         }
     }
-
     @Override
     public void sort() {
         Collections.sort(books, new Comparator<Book>() {
@@ -100,35 +101,6 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
         System.out.println("Total money book: " + total + " VND ");
 
     }
-    public int totalLanguage(List<Book> list, String language,String name) {
-        int total = 0;
-        if (name.equals("FictionBook")) {
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) instanceof FictionBook) {
-                    if (((FictionBook) list.get(i)).getCategory().equals(language)) {
-                        total++;
-                    }
-                }
-            }
-        } else if (name.equals("ProgramingBook")) {
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) instanceof ProgramingBook) {
-                    if (((ProgramingBook) list.get(i)).getLanguage().equals(language)) {
-                        total++;
-                    }
-                }
-            }
-        } else {
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) instanceof BusinessBook) {
-                    if (((BusinessBook) list.get(i)).getOrigin().equals(language)) {
-                        total++;
-                    }
-                }
-            }
-        }
-        return total;
-    }
     public List<Book> getListBook() {
         return books;
     }
@@ -138,5 +110,37 @@ public class BookManager implements CRUD<Book>, SearchSort<Book>, RealMoney {
     public void writeData(List<Book> value,String path) {
         readWriteFile.writeFile(books,path);
     }
-
+    public int totalCategory(List<Book> list,String category){
+        int total = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) instanceof FictionBook) {
+                if(((FictionBook) list.get(i)).getCategory().equals(category)){
+                    total++;
+                }
+            }
+        }
+        return total;
+    }
+    public int totalLanguage(List<Book> list,String language){
+        int total = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) instanceof ProgramingBook){
+                if(((ProgramingBook) list.get(i)).getLanguage().equals(language)){
+                    total ++;
+                }
+            }
+        }
+        return total;
+    }
+    public int totalOriginal(List<Book> list,String original){
+        int total = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) instanceof BusinessBook){
+                if(((BusinessBook) list.get(i)).getOrigin().equals(original)){
+                    total ++;
+                }
+            }
+        }
+        return total;
+    }
 }

@@ -8,7 +8,7 @@ import modal.person.Customer;
 
 import java.util.*;
 
-public class CustomerManager implements CRUD<Person>, SearchSort<Person> {
+public class CustomerManager implements CRUD<Person> {
     private ReadWriteFile<Person> readWriteFile = ReadWriteFile.getINSTANCE();
     private List<Person> persons;
     private Scanner scanner = new Scanner(System.in);
@@ -51,18 +51,17 @@ public class CustomerManager implements CRUD<Person>, SearchSort<Person> {
             }
         }
     }
-    @Override
-    public void search(String name) {
+
+    public void search(List<Person> list,String name) {
         for (int i = 0; i < persons.size(); i++) {
-            if(persons.get(i).equals(name)){
-                System.out.println(name + " index : " + i );
+            if(persons.get(i).getName().equals(name)){
+                System.out.println(name + " getName " +  " index : " + i );
             } else {
                 System.out.println("Can not found: ");
             }
         }
     }
-    @Override
-    public void sort() {
+    public void sortAge() {
         Collections.sort(persons, new Comparator<Person>() {
             @Override
             public int compare(Person p1, Person p2) {

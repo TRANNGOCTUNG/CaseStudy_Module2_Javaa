@@ -1,0 +1,3 @@
+total category FictionBook : Viễn tưởng 1
+total language progaramingBook : Java
+total original BusinessBook: Việt Nam
