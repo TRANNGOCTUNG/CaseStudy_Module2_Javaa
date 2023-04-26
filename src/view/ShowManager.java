@@ -268,6 +268,7 @@ public class ShowManager {
                     1.Display Customer.
                     2.Display Book.
                     3.Read name customer files.
+                    4.Read book files
                     0.Exit.
                     """);
             System.out.println("Enter choice: ");
@@ -281,6 +282,9 @@ public class ShowManager {
                 }
                 case 3 -> {
                     customerManager.readData("src/file/customer.dat");
+                }
+                case 4 -> {
+                    bookManager.readData("src/file/book.dat");
                 }
                 case 0 ->{
                 }
